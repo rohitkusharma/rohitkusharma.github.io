@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll-reveal effect for sections
-    const sections = document.querySelectorAll('main section'); // Target all sections within main
+    const sections = document.querySelectorAll('main section.fade-in'); // Target only sections with fade-in class
 
     const observerOptions = {
         root: null,
@@ -29,11 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     sections.forEach(section => {
-        // Only apply fade-in to sections that are not the hero section
-        // The hero section should be visible by default
-        if (!section.classList.contains('hero')) {
-            section.classList.add('fade-in'); // Start invisible
-        }
         observer.observe(section);
     });
 });
