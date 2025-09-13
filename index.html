@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohit Kumar Sharma</title>
     <link rel="icon" href="https://github.com/rohitkusharma.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -135,5 +136,18 @@
     </main>
 
     <script src="js/script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
