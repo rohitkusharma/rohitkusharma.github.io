@@ -18,7 +18,7 @@
 }
 
 html {
-    scroll-padding-top: 70px; /* Offset for fixed header */
+    scroll-padding-top: 100px; /* Offset for fixed header */
 }
 
 body {
