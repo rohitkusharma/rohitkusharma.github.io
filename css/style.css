@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 70px; /* Offset for fixed header */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
