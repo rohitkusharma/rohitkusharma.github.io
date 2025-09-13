@@ -223,6 +223,61 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+/* GitHub Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.projects-grid .project-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projects-grid .project-item h3 {
+    margin-bottom: 10px;
+}
+
+.projects-grid .project-item h3 a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.projects-grid .project-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.projects-grid .project-item p {
+    flex-grow: 1; /* Allow description to take available space */
+    margin-bottom: 15px;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-top: auto; /* Push to bottom of flex container */
+}
+
+.project-meta .language {
+    background-color: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.project-meta .stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 /* Responsive Design */
 /* Hamburger menu styles */
 .hamburger {
