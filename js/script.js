@@ -49,40 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fetch and display GitHub projects
-    const githubProjectsContainer = document.getElementById('github-projects');
-    const githubUsername = 'rohitkusharma'; // Replace with your GitHub username
-
-    fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&direction=desc`)
-        .then(response => response.json())
-        .then(repos => {
-            githubProjectsContainer.innerHTML = ''; // Clear loading message
-
-            // Filter out forks and non-public repos, and limit to a reasonable number (e.g., 6 recent projects)
-            const recentProjects = repos.filter(repo => !repo.fork && repo.private === false)
-                                         .slice(0, 6);
-
-            if (recentProjects.length === 0) {
-                githubProjectsContainer.innerHTML = '<p>No public projects found or an error occurred.</p>';
-                return;
-            }
-
-            recentProjects.forEach(repo => {
-                const projectElement = document.createElement('div');
-                projectElement.classList.add('project-item');
-                projectElement.innerHTML = `
-                    <h3><a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h3>
-                    <p>${repo.description || 'No description provided.'}</p>
-                    <div class="project-meta">
-                        ${repo.language ? `<span class="language">${repo.language}</span>` : ''}
-                        <span class="stars">⭐ ${repo.stargazers_count}</span>
-                    </div>
-                `;
-                githubProjectsContainer.appendChild(projectElement);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching GitHub projects:', error);
-            githubProjectsContainer.innerHTML = '<p>Failed to load GitHub projects. Please try again later.</p>';
-        });
-});
+    });
