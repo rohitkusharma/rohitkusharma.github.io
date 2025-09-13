@@ -312,3 +312,14 @@ nav ul li a:hover {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* --- DEBUG CSS --- */
+main, main section {
+    background-color: rgba(255, 0, 0, 0.2) !important; /* Red overlay */
+    min-height: 100px !important; /* Ensure they have height */
+    border: 1px solid red !important; /* Visible border */
+    display: block !important; /* Ensure they are block elements */
+    visibility: visible !important; /* Force visibility */
+    opacity: 1 !important; /* Force opacity */
+}
+/* --- END DEBUG CSS --- */
