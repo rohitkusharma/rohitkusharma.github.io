@@ -54,16 +54,16 @@ nav {
     color: var(--primary-color);
 }
 
-nav ul {
+.nav-menu {
     list-style: none;
     display: flex;
 }
 
-nav ul li {
+.nav-menu li {
     margin-left: 30px;
 }
 
-nav ul li a {
+.nav-menu li a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
@@ -224,22 +224,88 @@ nav ul li a:hover {
 }
 
 /* Responsive Design */
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100; /* Above nav-menu */
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: space-between; /* Logo left, hamburger right */
+        align-items: center;
     }
 
-    nav ul {
-        margin-top: 15px;
-        flex-direction: column;
-        width: 100%;
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
     }
 
-    nav ul li {
-        margin: 5px 0;
+    .nav-menu {
+        display: none; /* Hide nav menu by default on mobile */
+        flex-direction: column;
         width: 100%;
+        background-color: var(--card-background);
+        position: absolute;
+        top: 60px; /* Below header */
+        left: 0;
+        box-shadow: 0 2px 4px var(--shadow-color);
+        padding: 10px 0;
+    }
+
+    .nav-menu.nav-open {
+        display: flex; /* Show nav menu when open */
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
         text-align: center;
+    }
+
+    .nav-menu li a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    /* Existing media query rules, adjusted */
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero .contact-info a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .section {
+        padding: 50px 15px;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
     }
 
     .hero {

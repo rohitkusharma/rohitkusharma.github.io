@@ -31,4 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('nav-open');
+    });
+
+    // Close nav menu when a link is clicked (for mobile)
+    document.querySelectorAll('.nav-menu li a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('nav-open')) {
+                navMenu.classList.remove('nav-open');
+            }
+        });
+    });
 });
